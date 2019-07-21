@@ -58,8 +58,6 @@ enum macro_keycodes {
 #define KC_ALTKN ALT_T(KC_LANG1)
 
 #define KC_RSFT_ESC RSFT_T(KC_ESC)
-#define KC_LSFTRPRN LSFT_T(KC_LPRN)
-#define KC_RSFTRPRN RSFT_T(KC_RPRN)
 #define KC_CTLESC   CTL_T(KC_ESC)
 #define KC_ALTESC   ALT_T(KC_ESC)
 
@@ -70,7 +68,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
   //|------+------+------+------+------+------|                |------+------+------+------+------+------|
      CTLESC,     A,     S,     D,     F,     G,                      H,     J,     K,     L,  SCLN,  QUOT,\
   //|------+------+------+------+------+------|                |------+------+------+------+------+------|
-       LSFT,     Z,     X,     C,     V,     B,                      N,     M,  COMM,   DOT,  SLSH, RSFT_ESC,\
+       LSPO,     Z,     X,     C,     V,     B,                      N,     M,  COMM,   DOT,  SLSH,  RSPC,\
   //|------+------+------+------+------+------+------|  |------+------+------+------+------+------+------|
                                    LGUI, LOWER,   SPC,      ENT, RAISE, RALT \
                               //`--------------------'  `--------------------'
@@ -78,23 +76,23 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 
   [_LOWER] = LAYOUT_kc( \
   //,-----------------------------------------.                ,-----------------------------------------.
-        TAB,     1,     2,     3,     4,     5,                      6,     7,     8,     9,     0, MS_WH_LEFT,\
+      _____,     1,     2,     3,     4,     5,                      6,     7,     8,     9,     0, MS_WH_LEFT,\
   //|------+------+------+------+------+------|                |------+------+------+------+------+------|
-     CTLESC,    F1,    F2,    F3,    F4,    F5,                     F6,MS_BTN1,MS_UP,MS_BTN2,MS_WH_UP,MS_WH_RIGHT,\
+      _____,    F1,    F2,    F3,    F4,    F5,                     F6,MS_BTN3,MS_UP,MS_BTN2,MS_WH_UP,MS_WH_RIGHT,\
   //|------+------+------+------+------+------|                |------+------+------+------+------+------|
-       LSFT,    F7,    F8,    F9,   F10,   F11,                    F12,MS_LEFT,MS_DOWN,MS_RIGHT,MS_WH_DOWN,RSFT_ESC,\
+      _____,    F7,    F8,    F9,   F10,   F11,                    F12,MS_LEFT,MS_DOWN,MS_RIGHT,MS_WH_DOWN,_____,\
   //|------+------+------+------+------+------+------|  |------+------+------+------+------+------+------|
-                                  _____, _____, _____,    _____, _____, _____ \
+                                  _____, _____, _____,  MS_BTN1, _____, _____ \
                               //`--------------------'  `--------------------'
   ),
 
   [_RAISE] = LAYOUT_kc( \
   //,-----------------------------------------.                ,-----------------------------------------.
-        TAB,  PGUP,    UP,  HOME,   GRV,   INS,                   PSCR,  LBRC,  RBRC,  LPRN,  RPRN,  ALTESC,\
+      _____,  PGUP,    UP,  HOME,   GRV,   INS,                   PSCR,  LBRC,  RBRC,  LPRN,  RPRN, ALTESC,\
   //|------+------+------+------+------+------|                |------+------+------+------+------+------|
-     CTLESC,  LEFT,  DOWN, RIGHT,  BSPC,   DEL,                  XXXXX,  MINS,   EQL,  PAUS,  SLCK, XXXXX,\
+      _____,  LEFT,  DOWN, RIGHT,  BSPC,   DEL,                  XXXXX,  MINS,   EQL,  PAUS,  SLCK, XXXXX,\
   //|------+------+------+------+------+------|                |------+------+------+------+------+------|
-       LSFT,  PGDN,   APP,   END,  BSLS,  CAPS,                  XXXXX,  LBRC,  RBRC,  VOLD,  VOLU, RSFT_ESC,\
+      _____,  PGDN,   APP,   END,  BSLS,  CAPS,                  XXXXX,  LBRC,  RBRC,  VOLD,  VOLU, _____,\
   //|------+------+------+------+------+------+------|  |------+------+------+------+------+------+------|
                                   _____, _____, _____,    _____, _____, _____ \
                               //`--------------------'  `--------------------'
