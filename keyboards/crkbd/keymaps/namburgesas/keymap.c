@@ -52,6 +52,8 @@ enum macro_keycodes {
 #define KC_LSAD  RGB_SAD
 #define KC_LVAI  RGB_VAI
 #define KC_LVAD  RGB_VAD
+#define KC_LSPI  RGB_SPI
+#define KC_LSPD  RGB_SPD
 #define KC_LMOD  RGB_MOD
 #define KC_CTLTB CTL_T(KC_TAB)
 #define KC_GUIEI GUI_T(KC_LANG2)
@@ -76,13 +78,13 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 
   [_LOWER] = LAYOUT_kc( \
   //,-----------------------------------------.                ,-----------------------------------------.
-      _____,     1,     2,     3,     4,     5,                      6,     7,     8,     9,     0, MS_WH_LEFT,\
+      _____,     1,     2,     3,     4,     5,                      6,     7,     8,     9,     0,  WH_L,\
   //|------+------+------+------+------+------|                |------+------+------+------+------+------|
-      _____,    F1,    F2,    F3,    F4,    F5,                     F6,MS_BTN3,MS_UP,MS_BTN2,MS_WH_UP,MS_WH_RIGHT,\
+      _____,    F1,    F2,    F3,    F4,    F5,                     F6,  BTN3,  MS_U,  BTN2,  WH_U,  WH_R,\
   //|------+------+------+------+------+------|                |------+------+------+------+------+------|
-      _____,    F7,    F8,    F9,   F10,   F11,                    F12,MS_LEFT,MS_DOWN,MS_RIGHT,MS_WH_DOWN,_____,\
+      _____,    F7,    F8,    F9,   F10,   F11,                    F12,  MS_L,  MS_D,  MS_R,  WH_D, _____,\
   //|------+------+------+------+------+------+------|  |------+------+------+------+------+------+------|
-                                  _____, _____, _____,  MS_BTN1, _____, _____ \
+                                  _____, _____, _____,     BTN1, _____, _____ \
                               //`--------------------'  `--------------------'
   ),
 
@@ -102,9 +104,9 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
   //,-----------------------------------------.                ,-----------------------------------------.
         RST,  LRST, XXXXX, XXXXX, XXXXX, XXXXX,                  XXXXX, XXXXX, XXXXX, XXXXX, XXXXX, XXXXX,\
   //|------+------+------+------+------+------|                |------+------+------+------+------+------|
-       LTOG,  LHUI,  LSAI,  LVAI, XXXXX, XXXXX,                  XXXXX, XXXXX, XXXXX, XXXXX, XXXXX, XXXXX,\
+       LTOG,  LHUI,  LSAI,  LVAI,  LSPI, XXXXX,                  XXXXX, XXXXX, XXXXX, XXXXX, XXXXX, XXXXX,\
   //|------+------+------+------+------+------|                |------+------+------+------+------+------|
-       LMOD,  LHUD,  LSAD,  LVAD, XXXXX, XXXXX,                  XXXXX, XXXXX, XXXXX, XXXXX, XXXXX, XXXXX,\
+       LMOD,  LHUD,  LSAD,  LVAD,  LSPD, XXXXX,                  XXXXX, XXXXX, XXXXX, XXXXX, XXXXX, XXXXX,\
   //|------+------+------+------+------+------+------|  |------+------+------+------+------+------+------|
                                   _____, _____, _____,    _____, _____, _____ \
                               //`--------------------'  `--------------------'
