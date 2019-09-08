@@ -1,6 +1,6 @@
 EXTRAKEY_ENABLE = yes
-RGBLIGHT_ENABLE = yes
-# RGB_MATRIX_ENABLE = WS2812
+# RGBLIGHT_ENABLE = yes
+RGB_MATRIX_ENABLE = WS2812
 
 # If you want to change the display of OLED, you need to change here
 SRC +=  ./lib/glcdfont.c \
