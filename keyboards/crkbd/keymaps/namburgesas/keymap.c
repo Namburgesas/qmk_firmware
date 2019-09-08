@@ -1,12 +1,4 @@
 #include QMK_KEYBOARD_H
-#include "bootloader.h"
-#ifdef PROTOCOL_LUFA
-  #include "lufa.h"
-  #include "split_util.h"
-#endif
-#ifdef SSD1306OLED
-  #include "ssd1306.h"
-#endif
 
 extern keymap_config_t keymap_config;
 
@@ -163,7 +155,7 @@ void matrix_render_user(struct CharacterMatrix *matrix) {
     // If you want to change the display of OLED, you need to change here
     matrix_write_ln(matrix, read_layer_state());
     matrix_write_ln(matrix, read_keylog());
-    matrix_write_ln(matrix, read_keylogs());
+    //matrix_write_ln(matrix, read_keylogs());
     //matrix_write_ln(matrix, read_mode_icon(keymap_config.swap_lalt_lgui));
     //matrix_write_ln(matrix, read_host_led_state());
     //matrix_write_ln(matrix, read_timelog());
@@ -201,7 +193,6 @@ bool process_record_user(uint16_t keycode, keyrecord_t *record) {
         persistent_default_layer_set(1UL<<_QWERTY);
       }
       return false;
-      break;
     case LOWER:
       if (record->event.pressed) {
         layer_on(_LOWER);
@@ -211,7 +202,6 @@ bool process_record_user(uint16_t keycode, keyrecord_t *record) {
         update_tri_layer_RGB(_LOWER, _RAISE, _ADJUST);
       }
       return false;
-      break;
     case RAISE:
       if (record->event.pressed) {
         layer_on(_RAISE);
@@ -221,7 +211,6 @@ bool process_record_user(uint16_t keycode, keyrecord_t *record) {
         update_tri_layer_RGB(_LOWER, _RAISE, _ADJUST);
       }
       return false;
-      break;
     case ADJUST:
         if (record->event.pressed) {
           layer_on(_ADJUST);
@@ -229,7 +218,6 @@ bool process_record_user(uint16_t keycode, keyrecord_t *record) {
           layer_off(_ADJUST);
         }
         return false;
-        break;
     case RGB_MOD:
       #ifdef RGBLIGHT_ENABLE
         if (record->event.pressed) {
@@ -239,7 +227,6 @@ bool process_record_user(uint16_t keycode, keyrecord_t *record) {
         }
       #endif
       return false;
-      break;
     case RGBRST:
       #ifdef RGBLIGHT_ENABLE
         if (record->event.pressed) {
