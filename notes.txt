@@ -1,0 +1,3 @@
+/Users/namnguyen/dev/qmk_firmware/keyboards/lily58/keymaps/nomster/keymap.c
+qmk flash -kb lily58 -km nomster -bl avrdude-split-left
+qmk flash -kb lily58 -km nomster -bl avrdude-split-right
